@@ -1,115 +1,96 @@
-✈️ Flight Price Prediction System
-A real-time, production-level Machine Learning project that predicts airline ticket prices using features like airline, source city, destination city, class, stops, and days left to departure. Built with a modular, scalable architecture, and served via a Flask web application.
+# ✈️ Flight Price Prediction System
 
-🚀 Project Highlights
-✅ End-to-End ML pipeline: Data → Preprocessing → Modeling → Evaluation → Deployment
+A real-time, production-level Machine Learning project that predicts airline ticket prices using features like airline, source city, destination city, class, stops, and days left to departure.  
+Built with a modular, scalable architecture and deployed using a Flask web application.
 
-🧱 Modular structure (real-time codebase standards)
+---
 
-🧠 Machine Learning with Linear Regression
+## 🚀 Project Highlights
 
-🧼 Custom Missing Value & Label Encoding Strategies
+- ✅ **End-to-End ML pipeline**: Data → Preprocessing → Modeling → Evaluation → Deployment  
+- 🧱 **Modular structure** following real-time production codebase standards  
+- 🧠 **Machine Learning** using Linear Regression  
+- 🧼 **Custom strategies** for Missing Value Handling & Label Encoding  
+- 🌐 **Flask-based web interface** for real-time prediction  
+- 📦 **Model persistence** using Pickle  
+- 💡 **Scalable** for advanced models (Random Forest, XGBoost, etc.)
 
-🌐 Flask-based web interface
+---
 
-📦 Model persistence with Pickle
+## 📁 Project Structure
 
-💡 Scalable for advanced models (XGBoost, RF, etc.)
-
-📁 Project Architecture
-graphql
-Copy
-Edit
+```
 Flight_Fare_Prediction/
-│
-├── data/                           # Raw or preprocessed datasets
-├── artifacts/                      # Trained model (.pkl) saved here
-├── src/
-│   ├── base/                       # Base classes for Strategy Pattern
-│   ├── data/                       # Data loading modules
+├── data/                         # Raw or cleaned datasets
+├── artifacts/                   # Trained model (model.pkl)
+├── src/                         # Core ML pipeline
+│   ├── base/                    # Base strategy classes
+│   ├── data/                    # Data loading logic
 │   ├── preprocessing/
-│   │   ├── feature_engineering/    # Label encoding, scaling
+│   │   ├── feature_engineering/ # Encoding, scaling
 │   │   └── missing_value_handler.py
-│   ├── model/                      # Training and evaluation logic
-├── templates/                      # HTML templates for Flask app
-├── static/                         # CSS and static files
-├── main.py                         # Model pipeline script
-├── app.py                          # Flask web app
-├── config.yaml                     # YAML config (paths, columns)
-└── requirements.txt
-📊 Dataset Features
-airline
+│   ├── model/                   # Training & evaluation
+├── templates/                   # HTML templates for Flask
+├── static/                      # CSS for UI
+├── main.py                      # Model pipeline entry point
+├── app.py                       # Flask application
+├── config.yaml                  # Config file for paths/features
+└── requirements.txt             # Project dependencies
+```
 
-flight
 
-source_city
+---
 
-departure_time
+## ⚙️ How to Run
 
-stops
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/umamahesh01/flight-price-prediction-system.git
+   cd flight-price-prediction-system
+   ```
 
-arrival_time
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-destination_city
+3. **Train the Model**
+   ```bash
+   python main.py
+   ```
 
-class
+4. **Launch Flask App**
+   ```bash
+   python app.py
+   ```
 
-duration
+---
 
-days_left
+## 🌐 Web Application
 
-price (Target)
+- Fill in flight details using the web interface  
+- Click **Predict** to get the estimated fare  
+- Responsive and intuitive UI for quick use  
 
-📈 Model Performance
-Algorithm: Linear Regression
+---
 
-R² Score: ~0.90
+## 🧠 Future Enhancements
 
-RMSE: ~7013
+- 🌍 Deploy on **AWS / GCP / Render**
+- 🐳 **Dockerize** the entire app
+- 🌲 Use **Random Forest / XGBoost** for better accuracy
+- 📊 Integrate **MLflow** or **Weights & Biases** for experiment tracking
+- 🔄 Add **CI/CD pipelines** with GitHub Actions
 
-MSE: ~49M
+---
 
-🔥 Accurate enough for baseline predictions. Easily extendable to tree-based models for higher accuracy.
+## 👨‍💻 Author
 
-⚙️ How to Run
-1. Clone the repository
-bash
-Copy
-Edit
-git clone https://github.com/umamahesh01/flight-price-prediction-system.git
-cd flight-price-prediction-system
-2. Install dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-3. Train the model
-bash
-Copy
-Edit
-python main.py
-4. Launch Flask App
-bash
-Copy
-Edit
-python app.py
-🌐 Web Application
-Enter flight details on a clean UI.
+**Uma Mahesh Reddy**  
+[GitHub – @umamahesh01](https://github.com/umamahesh01)
 
-Click Predict to see estimated fare.
+---
 
-Fast, responsive, and intuitive.
+## 📄 License
 
-(optional)
-
-🧠 Future Enhancements
-Deploy on AWS/GCP/Render
-
-Dockerize app for production
-
-Use advanced models (Random Forest, XGBoost)
-
-Track experiments with MLflow or Weights & Biases
-
-Add CI/CD with GitHub Actions
-
+This project is licensed under the **MIT License**.
