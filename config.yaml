@@ -1,0 +1,15 @@
+data_path : "data/Clean_Dataset.csv"
+model_path: "artifacts/model.pkl"
+
+target_column: "price"
+features:
+  - airline
+  - flight
+  - source_city
+  - departure_time
+  - stops
+  - arrival_time
+  - destination_city
+  - class
+  - duration
+  - days_left
