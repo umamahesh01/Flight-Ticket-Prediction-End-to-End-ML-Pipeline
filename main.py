@@ -20,7 +20,7 @@ if 'Unnamed: 0' in df.columns:
     df.drop(columns='Unnamed: 0', inplace=True)
 
 # Filling Missing values
-handler = FillMissingValuesStrategy(method= 'mode')
+handler = FillMissingValuesStrategy(num_method='mean', cat_method='mode')
 df = handler.handle(df)
 
 # Encoding
