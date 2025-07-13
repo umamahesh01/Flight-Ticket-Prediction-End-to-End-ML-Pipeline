@@ -13,9 +13,9 @@ class FillMissingValuesStrategy(MissingValueStrategy):
 
         # Handling Categorical cols
         for i in df.select_dtypes(include= 'object').columns:
-            if self.method == 'mode':
+            if self.cat_method == 'mode':
                 df[i].fillna(df[i].mode()[0])
-            elif self.method == 'constant':
+            elif self.cat_method == 'constant':
                 df[i] = df[i].fillna(self.fill_value)
             else:
                 raise ValueError(f"{self.method} not valid for categorical columns")
@@ -23,14 +23,13 @@ class FillMissingValuesStrategy(MissingValueStrategy):
         # Handling numerical cols   
         for i in df.select_dtypes(exclude='object').columns:
 
-            if self.method == 'mean':
+            if self.num_method == 'mean':
                 df[i] = df[i].fillna(df[i].mean())
-
-            elif self.method == 'mode':
+            elif self.num_method == 'mode':
                 df[i].fillna(df[i].mode()[0])
-            elif self.method == 'median':
+            elif self.num_method == 'median':
                 df[i].fillna(df[i].median())
-            elif self.method == "constant":
+            elif self.num_method == "constant":
                 df.fillna(self.fill_value)
             else:
                 raise ValueError("Invalid method for numerical columns")
