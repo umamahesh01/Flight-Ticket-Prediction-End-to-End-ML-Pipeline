@@ -9,16 +9,71 @@
     <div class="container">
         <h2>Flight Fare Predictor ✈️</h2>
         <form action="/predict" method="POST">
-            <input type="text" name="airline" placeholder="Airline (e.g., IndiGo)" required>
-            <input type="text" name="flight" placeholder="Flight (e.g., SG-8709)" required>
-            <input type="text" name="source_city" placeholder="Source City" required>
-            <input type="text" name="departure_time" placeholder="Departure Time" required>
-            <input type="text" name="stops" placeholder="Stops (e.g., zero, one)" required>
-            <input type="text" name="arrival_time" placeholder="Arrival Time" required>
-            <input type="text" name="destination_city" placeholder="Destination City" required>
-            <input type="text" name="class_type" placeholder="Class (e.g., Economy)" required>
-            <input type="number" step="0.01" name="duration" placeholder="Duration (in hrs)" required>
-            <input type="number" name="days_left" placeholder="Days Left" required>
+
+            <!-- Airline -->
+            <label for="airline">Airline</label>
+            <select name="airline" id="airline">
+                <option value="Vistara">Vistara</option>
+                <option value="Air_India">Air_India</option>
+                <option value="Indigo">Indigo</option>
+                <option value="GO_FIRST">GO_FIRST</option>
+                <option value="AirAsia">AirAsia</option>
+                <option value="SpiceJet">SpiceJet</option>
+            </select>
+
+            <!-- Source City -->
+            <label for="source_city">Source City</label>
+            <select name="source_city" required>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+            </select>
+
+            <!-- Departure Time -->
+            <label for="departure_time">Departure Time</label>
+            <select name="departure_time" required>
+                <option value="Early_Morning">Early Morning</option>
+                <option value="Morning">Morning</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+                <option value="Night">Night</option>
+                <option value="Late_Night">Late Night</option>
+            </select>
+
+            <!-- Stops -->
+            <label for="stops">Stops</label>
+            <select name="stops" required>
+                <option value="zero">Non-stop</option>
+                <option value="one">1 Stop</option>
+                <option value="two_or_more">2+ Stops</option>
+            </select>
+
+        
+            <!-- Destination City -->
+            <label for="destination_city">Destination City</label>
+            <select name="destination_city" required>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+            </select>
+
+            <!-- Class -->
+            <label for="class_type">Class</label>
+            <select name="class_type" required>
+                <option value="Economy">Economy</option>
+                <option value="Business">Business</option>
+            </select>
+
+            <!-- Days Left -->
+            <label for="days_left">Days Left</label>
+            <input type="number" name="days_left" placeholder="Days Left until Departure" required>
+
             <button type="submit">Predict</button>
         </form>
 

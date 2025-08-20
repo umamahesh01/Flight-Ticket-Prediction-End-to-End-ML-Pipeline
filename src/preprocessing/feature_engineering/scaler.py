@@ -1,4 +1,6 @@
 import pandas as pd
+import os
+import pickle
 from sklearn.preprocessing import StandardScaler   
 
 class Scaling:
@@ -17,3 +19,8 @@ class Scaling:
 
         df[cols] = self.scaled.transform(df[cols])
         return df
+
+    def save(self, path):
+        os.makedirs(os.path.dirname(path), exist_ok= True)
+        with open(path, 'wb') as f:
+            pickle.dump(self.scaled, f)

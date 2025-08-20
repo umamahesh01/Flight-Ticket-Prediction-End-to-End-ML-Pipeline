@@ -1,61 +1,103 @@
+/* Background */
 body {
-    background: linear-gradient(to right, #2c3e50, #3498db);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
 }
 
+/* Main container */
 .container {
-    max-width: 600px;
     background: rgba(255, 255, 255, 0.1);
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Title */
 h2 {
     text-align: center;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-
-    -webkit-text-fill-color: transparent;
+    font-size: 28px;
     font-weight: bold;
+    margin-bottom: 25px;
+    color: #f1f1f1;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+/* Labels */
+label {
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
 }
 
+/* Inputs & Dropdowns */
 input, select {
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 8px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
     border: none;
+    margin-bottom: 15px;
     outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    transition: all 0.3s ease;
 }
 
+input:focus, select:focus {
+    box-shadow: 0 0 8px #00c6ff;
+    transform: scale(1.02);
+}
+
+/* Button */
 button {
-    padding: 12px;
+    width: 100%;
+    padding: 14px;
     border: none;
-    background: #1abc9c;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
     color: white;
-    border-radius: 10px;
     font-size: 16px;
-    margin-top: 15px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
 button:hover {
-    background: #16a085;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    transform: scale(1.05);
 }
 
+/* Prediction Result */
 .result {
     margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 198, 255, 0.2);
+    border: 1px solid #00c6ff;
+    border-radius: 10px;
     font-size: 18px;
     text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
